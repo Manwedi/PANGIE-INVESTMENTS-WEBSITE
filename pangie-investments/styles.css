@@ -1,19 +1,30 @@
-body {
-    background-color: #55e1d7;
-    font-family: Arial, Helvetica, sans-serif;
-    margin:0 ;
-    padding:0 ;
+/* Base Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-    .navbar {
+body {
+  background-color: #55e1d7;
+  font-family: Arial, sans-serif;
+  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navigation Header */
+.navbar {
   background-color: #333333;
   color: #ffffff;
-  padding: 15px 20px;
+  padding: 2.5px 10px;
 }
 
 .navdiv {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -30,4 +41,47 @@ body {
   display: flex;
   gap: 10px;
 }
+
+.nav-btn {
+  background-color: #ffffff;
+  color: #333333;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.nav-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Main Content Area */
+.content-wrap {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  
+  flex: 1;
+}
+
+.main-title {
+  text-align: center;
+}
+
+.intro-text {
+  text-align: left;
+}
+
+.mission-text {
+  text-align: center;
+}
+
+/* Footer Styles */
+.site-footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #333333;
+  color: #ffffff;
+  width: 100%;
 }
