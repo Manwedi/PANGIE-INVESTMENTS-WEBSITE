@@ -31,3 +31,14 @@ function reloadSlider() {
     clearInterval(refreshInterval);
     refreshInterval = setInterval(() => { next.click() }, 3000);
 }
+
+dots.forEach((li, key) => {
+    li.addEventListener('click', () => {
+        active = key;
+        reloadSlider();
+    });
+});
+
+window.onresize = function(event) {
+    reloadSlider();
+};
