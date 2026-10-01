@@ -48,7 +48,7 @@ body {
   border: none;
   padding: 8px 16px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 26px;
   font-weight: bold;
 }
 
@@ -88,13 +88,22 @@ body {
   align-items: center;
 }
 .navdiv ul button {
-  background: #d4af37;
+  background: #d984fb;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 16px;
   margin-left: 10px;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 4px;
+  display: flex;
+  border-radius: 26px;
+
+  width: auto;
+  min-width: max-content;
+  white-space: nowrap;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Content */
@@ -154,7 +163,7 @@ body {
   background-color: rgba(255, 255, 255, 0.25);
   color: #fff;
   border: none;
-  font-family: monospace;
+  font-family: arial, sans-serif;
   font-weight: bold;
   font-size: 1.2rem;
   cursor: pointer;
@@ -196,6 +205,33 @@ body {
   background-color: #d4af37;
 }
 
+.services-btn {
+  background-color: #d4af37;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 26px;
+  cursor: pointer;
+  width: auto;
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.services-btn a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.services-btn:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
 /* Footer Styles */
 .site-footer {
   text-align: center;
@@ -206,7 +242,7 @@ body {
 }
 .fa {
   padding: 20px;
-  font-size: 30px;
+  font-size: 25px;
   width: 30px;
   text-align: center;
   text-decoration: none;
@@ -250,7 +286,7 @@ button{
 		border-radius: 10px;
 		font-size: 16px;
 		font-weight: none;
-		background-color: light steel blue;
+		background-color: light steel rgb(241, 63, 63);
 	}
 	button:hover{
 		background-color: gray;
