@@ -77,6 +77,97 @@ body {
   text-align: center;
 }
 
+.slider {
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.slider .list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  width: max-content;
+  transition: 1s ease-in-out;
+}
+
+.slider .list .item {
+  width: 1000px;
+  height: 100%;
+}
+
+.slider .list .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Next/Prev Buttons */
+.buttons {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border: none;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #d4af37;
+  color: #000;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 20px;
+  color: #fff;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.dots li {
+  list-style: none;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  border-radius: 20px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.dots li.active {
+  width: 30px;
+  background-color: #d4af37;
+}
+
 /* Footer Styles */
 .site-footer {
   text-align: center;
