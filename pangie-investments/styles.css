@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-  background-color: #55e1d7;
+  background-color: #5568f4;
   font-family: Arial, sans-serif;
   
   display: flex;
@@ -16,7 +16,7 @@ body {
 
 /* Navigation Header */
 .navbar {
-  background-color: #333333;
+  background-color: #d880f5;
   color: #ffffff;
   padding: 2.5px 10px;
 }
@@ -204,3 +204,56 @@ body {
   color: #ffffff;
   width: 100%;
 }
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.2;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: black;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+button{
+		padding: 4px;
+		width: 80px;
+		border: none;
+		border-radius: 10px;
+		font-size: 16px;
+		font-weight: none;
+		background-color: light steel blue;
+	}
+	button:hover{
+		background-color: gray;
+		color: blue;
+		cursor: pointer;
+	}
