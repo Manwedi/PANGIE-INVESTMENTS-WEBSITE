@@ -77,6 +77,34 @@ body {
   text-align: center;
 }
 
+/* Navigation Styling */
+.navbar {
+  background-color: #0b0e14;
+  padding: 15px 30px;
+}
+.navdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navdiv ul button {
+  background: #d4af37;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Content */
+.content-wrap {
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .slider {
   width: 100%;
   max-width: 1000px;
