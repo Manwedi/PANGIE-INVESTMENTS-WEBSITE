@@ -20,4 +20,14 @@ prev.onclick = function() {
 let refreshInterval = setInterval(() => { next.click() }, 3000);
 
 function reloadSlider() {
-    slider.style.left = active * -100 + '%';
+    slider.style.left = -items[active].offsetLeft + 'px';
+    
+    let last_active_dot = document.querySelector('.slider .dots li.active');
+    if (last_active_dot) {
+        last_active_dot.classList.remove('active');
+    }
+    dots[active].classList.add('active');
+
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(() => { next.click() }, 3000);
+}
