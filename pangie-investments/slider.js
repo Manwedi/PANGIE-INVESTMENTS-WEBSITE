@@ -6,31 +6,43 @@ let dots = document.querySelectorAll('.slider .dots li');
 
 let lengthItems = items.length - 1;
 let active = 0;
+let refreshInterval;
 
-next.onclick = function() {
-    active = active + 1 <= lengthItems ? active + 1 : 0;
-    reloadSlider();
+function startAutoSlide() {
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(() => {
+        active = active + 1 <= lengthItems ? active + 1 : 0;
+        reloadSlider();
+    }, 3000);
 }
-
-prev.onclick = function() {
-    active = active - 1 >= 0 ? active - 1 : lengthItems;
-    reloadSlider();
-}
-
-let refreshInterval = setInterval(() => { next.click() }, 3000);
 
 function reloadSlider() {
-    slider.style.left = -items[active].offsetLeft + 'px';
-    
-    let last_active_dot = document.querySelector('.slider .dots li.active');
-    if (last_active_dot) {
-        last_active_dot.classList.remove('active');
-    }
-    dots[active].classList.add('active');
+    // Hardware accelerated GPU movement using transform instead of 'left'
+    let percentage = active * (100 / items.length);
+    slider.style.transform = `translateX(-${percentage}%)`;
 
-    clearInterval(refreshInterval);
-    refreshInterval = setInterval(() => { next.click() }, 3000);
+    // Update active dot
+    let lastActiveDot = document.querySelector('.slider .dots li.active');
+    if (lastActiveDot) {
+        lastActiveDot.classList.remove('active');
+    }
+    if (dots[active]) {
+        dots[active].classList.add('active');
+    }
+
+    // Reset timer on user interaction
+    startAutoSlide();
 }
+
+next.addEventListener('click', () => {
+    active = active + 1 <= lengthItems ? active + 1 : 0;
+    reloadSlider();
+});
+
+prev.addEventListener('click', () => {
+    active = active - 1 >= 0 ? active - 1 : lengthItems;
+    reloadSlider();
+});
 
 dots.forEach((li, key) => {
     li.addEventListener('click', () => {
@@ -39,6 +51,10 @@ dots.forEach((li, key) => {
     });
 });
 
-window.onresize = function(event) {
+// Window resize safety handler
+window.addEventListener('resize', () => {
     reloadSlider();
-};
+});
+
+// Start initial interval
+startAutoSlide();

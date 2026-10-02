@@ -134,25 +134,26 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* Enable smooth hardware acceleration */
 .slider .list {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
   display: flex;
-  width: max-content;
-  transition: 1s ease-in-out;
+  height: 100%;
+  width: 500%; /* 100% per item for 5 items */
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth easing */
+  will-change: transform; /* Hint to the browser GPU */
 }
 
 .slider .list .item {
-  width: 1000px;
+  width: 20%; /* Each item takes 1/5th of the wrapper */
   height: 100%;
+  flex-shrink: 0;
 }
 
 .slider .list .item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* Next/Prev Buttons */
@@ -262,9 +263,9 @@ body {
   padding: 20px;
   font-size: 25px;
   width: 30px;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
-  margin: 5px 2px;
+  margin: 5px 2px;      
   border-radius: 50%;
 }
 
